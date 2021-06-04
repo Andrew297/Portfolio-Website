@@ -9,6 +9,7 @@
   --clr-dark: #303030;
   --clr-darker: #111;
   --clr-accent: #d98e4e;
+  --clr-github: #6e5494;
 
   --fs-h1: 4rem;
   --fs-body: 1rem;
@@ -27,6 +28,29 @@ body{
   color:var(--clr-light);
   background-color: var(--clr-darker);
   line-height:1.6;
+}
+
+.button {
+  color: var(--clr-light);
+  background-color: var(--clr-accent);
+  text-decoration: none;
+  border-radius: 5px;
+  width: 70%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.button:hover {
+  color:var(--clr-dark);
+  background-color: var(--clr-light);
+}
+
+.button__github {
+  background-color: var(--clr-github);
+}
+
+.padding {
+  padding-bottom: 1rem;
 }
 
 #showcase{
@@ -67,7 +91,7 @@ body{
   color:var(--clr-accent);
 }
 
-#showcase .button{
+#showcase .down-button{
   position: absolute;
   top: 90vh;
   font-size:30px;
@@ -75,7 +99,7 @@ body{
   color:inherit;
 }
 
-#showcase .button:hover{
+#showcase .down-button:hover{
   color:var(--clr-accent);
 }
 
@@ -83,16 +107,66 @@ body{
   background-color: var(--clr-dark);
   color: var(--clr-light);
   text-align: center;
-  height:80vh;
+
 }
 
 .my-work h2 {
-  font-size: var(--fs-h1)
+  font-size: var(--fs-h1);
+  margin-bottom: 1rem;
 }
 
 .portfolio {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-item {
+  position: relative;
+  width: 30rem;
+  margin: 1rem;
+  box-shadow: var(--clr-darker) 0px 7px 29px 0px;
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__title {
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .footer {
