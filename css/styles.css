@@ -1,6 +1,6 @@
 :root {
   --ff-primary: 'Lato', sans-serif;
-  --ff-secondary: 'Source Code Pro' monospace;
+  --ff-secondary: 'Arvo' serif;
 
   --fw-reg: 300;
   --fw-bold: 900;
@@ -23,14 +23,20 @@
 
 body{
   margin:0;
-  font-family: var(--ff-primary);
+  font-family: var(--ff-secondary);
   font-size:17px;
   color:var(--clr-light);
   background-color: var(--clr-darker);
   line-height:1.6;
 }
 
+p {
+  font-family: var(--ff-primary);
+  padding-top: 1rem;
+}
+
 .button {
+  font-family: var(--ff-primary);
   color: var(--clr-light);
   background-color: var(--clr-accent);
   text-decoration: none;
@@ -170,6 +176,7 @@ body{
 }
 
 .footer {
+  font-family: var(--ff-primary);
   background: var(--clr-darker);
   color: var(--clr-accent);
   text-align: center;
